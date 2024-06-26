@@ -16,10 +16,14 @@ export interface Book {
   }
   export interface BookListProps {
     books: Book[];
-    dispatch: React.Dispatch<any>;
+    dispatch: React.Dispatch<Action>;
   }
   export interface BookFormProps {
     onClose: () => void;
-    dispatch: React.Dispatch<any>;
+    dispatch: React.Dispatch<Action>;
     book?: Book;
   }
+  export type Action =
+  | { type: 'ADD_BOOK'; payload: Book }
+  | { type: 'UPDATE_BOOK'; payload: Book }
+  | { type: 'DELETE_BOOK'; payload: number };

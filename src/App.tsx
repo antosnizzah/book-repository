@@ -1,16 +1,9 @@
 import  { useReducer, useEffect, useState } from 'react';
-import { Book,State} from './types/types';
+import { Book,State,Action} from './types/types';
 import useLocalStorage from './hooks/useLocalStorage';
 import BookList from './components/BookList';
 import BookForm from './components/BookForm';
 import  './App.scss';
-
-
-  type Action =
-  | { type: 'ADD_BOOK'; payload: Book }
-  | { type: 'UPDATE_BOOK'; payload: Book }
-  | { type: 'DELETE_BOOK'; payload: number };
-
 
 function bookReducer(state: State, action: Action): State {
   switch (action.type) {
